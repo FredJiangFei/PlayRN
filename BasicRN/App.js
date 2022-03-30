@@ -23,6 +23,8 @@ export default function App() {
       {/* ImagePicker */}
       <RnImagePicker />
 
+      {/* Splash */}
+      
 
     </View>
   );
