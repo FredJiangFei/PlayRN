@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
-import { StyleSheet, Text, View, ScrollView, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, View, ScrollView } from 'react-native'
 import authService from '../api/authService'
-import Screen from '../components/Screen'
 import ElButton from '../components/ElButton'
 import ElTextInput from '../components/ElTextInput'
 import Link from '../components/Link'
@@ -14,7 +13,7 @@ import { Formik } from 'formik'
 import { useAuth } from './../hooks/useAuth'
 import Google from './../svgs/google'
 import Facebook from './../svgs/facebook'
-import colors from '../config/colors'
+import AuthScreen from '../components/AuthScreen'
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
@@ -37,8 +36,7 @@ export default function LoginScreen({ navigation }) {
   return (
     <>
       <Loader visible={loading} />
-      <SafeAreaView>
-        <View style={styles.header}></View>
+      <AuthScreen>
         <ScrollView style={styles.container}>
           <ElTitle>Account Login</ElTitle>
           <Formik
@@ -106,17 +104,16 @@ export default function LoginScreen({ navigation }) {
                   <Google />
                   <Facebook />
                 </View>
-
-                <ElButton title="Sign up" onPress={handleSubmit} />
-
                 <Text style={{ textAlign: 'center' }}>
                   <Link to={routes.Register}>Sign up for free</Link>
                 </Text>
+
+                <ElButton title="Sign in" onPress={handleSubmit} />
               </>
             )}
           </Formik>
         </ScrollView>
-      </SafeAreaView>
+      </AuthScreen>
     </>
   )
 }
@@ -163,9 +160,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginBottom: 8,
     marginBottom: 8,
-  },
-  header: {
-    height: 20,
-    backgroundColor: colors.primary,
-  },
+  }
 })

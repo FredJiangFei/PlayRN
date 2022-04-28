@@ -17,6 +17,7 @@ export default HomeNavigator = () => {
         name={routes.Home}
         component={HomeScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="home" color={color} size={size} />
           ),
@@ -26,6 +27,7 @@ export default HomeNavigator = () => {
         name={routes.Calendar}
         component={CalendarScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="calendar" color={color} size={size} />
           ),
@@ -48,6 +50,7 @@ export default HomeNavigator = () => {
         name={routes.Account}
         component={AccountScreen}
         options={{
+          headerShown: false,
           tabBarIcon: ({ color, size }) => (
             <MaterialCommunityIcons name="account" color={color} size={size} />
           ),
