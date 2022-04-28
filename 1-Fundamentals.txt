@@ -1,0 +1,9 @@
+# Expo CLI
+
+# Using libraries
+### Using React Native Core Libraries // import { Text, View } from 'react-native';
+### Using Expo SDK Libraries  // import * as Device from 'expo-device';
+### Using Third-Party Libraries
+
+# Viewing logs
+# Development and Production Mode
