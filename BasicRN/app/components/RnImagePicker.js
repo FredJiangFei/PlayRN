@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, Image, TouchableOpacity, Button } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
 import * as Sharing from 'expo-sharing'; 
 
@@ -36,9 +36,7 @@ export default function RnImagePicker() {
         <TouchableOpacity onPress={openShareDialogAsync} style={styles.button}>
           <Text style={styles.buttonText}>Share this photo</Text>
         </TouchableOpacity>
-        <TouchableOpacity onPress={openImagePickerAsync} style={styles.button}>
-            <Text style={styles.buttonText}>Pick a photo</Text>
-        </TouchableOpacity>
+        <Button title='Pick a photo' onPress={openImagePickerAsync}></Button>
     </>
   );
 }
