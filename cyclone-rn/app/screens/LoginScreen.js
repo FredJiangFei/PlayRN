@@ -26,14 +26,8 @@ export default function LoginScreen({ navigation }) {
 
   const submit = async (values) => {
     setLoading(true);
-    try {
-      const res = await authService.login({ ...values });
-      logIn(res.data.token);
-    } catch (error) {
-      console.log("res:", res);
-      console.log("error:", error);
-      setLoading(false);  
-    }
+    // const res = await authService.login(values.email, values.password);
+    logIn("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiNGEwNTIyODAtMThiMC00NGRkLThkNDYtODllYjQ4MDA5MjllIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiamlhbmdmQHFxLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjNiZDMxNjhmLTI0MjQtNDA0ZC04MmJiLWM2YjM5YTAzOTcxOSIsImlkIjoiM2JkMzE2OGYtMjQyNC00MDRkLTgyYmItYzZiMzlhMDM5NzE5IiwiZmlyc3ROYW1lIjoiRnJlZCIsImxhc3ROYW1lIjoiRG9hbmNlIiwicGljdHVyZVVybCI6IiIsIm5iZiI6MTY0MjU4MDYzMiwiZXhwIjoxNjQyNjY3MDMyLCJpc3MiOiJFbHl0ZSIsImF1ZCI6Ind3dy5lbHl0ZS5jb20ifQ.PM_ysmZNh861Aa9R0A8YQuguy9I8_pwCuJn0yf6ZGeE");
     setLoading(false);
   };
 
@@ -44,7 +38,10 @@ export default function LoginScreen({ navigation }) {
         <ScrollView style={styles.container}>
           <ElTitle>Account Login</ElTitle>
           <Formik
-            initialValues={{ email: 'eve.holt@reqres.in', password: '' }}
+            initialValues={{
+              email: 'eve.holt@reqres.in',
+              password: 'cityslicka',
+            }}
             // "email": "eve.holt@reqres.in",
             // "password": "cityslicka"
             validationSchema={validationSchema}
@@ -111,11 +108,10 @@ export default function LoginScreen({ navigation }) {
                   <Google />
                   <Facebook />
                 </View>
+                <ElButton title="Sign in" onPress={handleSubmit} />
                 <Text style={{ textAlign: 'center' }}>
                   <Link to={routes.Register}>Sign up for free</Link>
                 </Text>
-
-                <ElButton title="Sign in" onPress={handleSubmit} />
               </>
             )}
           </Formik>

@@ -1,6 +1,5 @@
 import React from 'react'
 import { StyleSheet, View, FlatList } from 'react-native'
-import Screen from '../components/Screen'
 import ListItem from '../components/ListItem'
 import ListItemSeparator from '../components/ListItemSeparator'
 import colors from '../config/colors'
@@ -29,7 +28,7 @@ export default function AccountScreen({ navigation }) {
   const { user, logOut } = useAuth()
 
   return (
-    <Screen style={styles.screen}>
+    <>
       <View style={styles.container}>
         <ListItem
           title="Super Mario"
@@ -61,15 +60,11 @@ export default function AccountScreen({ navigation }) {
         title="Log Out"
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
       />
-    </Screen>
+    </>
   )
 }
 
 const styles = StyleSheet.create({
-  screen: {
-    backgroundColor: colors.light,
-  },
-
   container: {
     marginVertical: 20,
   },

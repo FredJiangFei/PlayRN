@@ -1,11 +1,6 @@
-import React from 'react'
-import { Text } from 'react-native'
-import Screen from '../components/Screen'
+import React from 'react';
+import { Text } from 'react-native';
 
 export default function CalendarScreen({ navigation }) {
-  return (
-    <Screen>
-      <Text>Calendar</Text>
-    </Screen>
-  )
+  return <Text>Calendar</Text>;
 }
