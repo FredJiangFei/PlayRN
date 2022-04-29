@@ -1,11 +1,14 @@
 import React from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { View, Button, Text, StyleSheet } from 'react-native';
 
 const Home = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text>This is the Home screen!</Text>
-      <Button onPress={() => navigation.toggleDrawer()} title="Toggle Drawer" />
+      <Button
+        title="Go to About Screen"
+        onPress={() => navigation.navigate('About')}
+      />
     </View>
   );
 };
