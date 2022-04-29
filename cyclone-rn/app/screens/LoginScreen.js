@@ -1,37 +1,41 @@
-import React, { useState } from 'react'
-import { StyleSheet, Text, View, ScrollView } from 'react-native'
-import authService from '../api/authService'
-import ElButton from '../components/ElButton'
-import ElTextInput from '../components/ElTextInput'
-import Link from '../components/Link'
-import Loader from '../components/Loader'
-import ErrorMessage from '../components/ErrorMessage'
-import ElTitle from './../components/ElTitle'
-import routes from '../navigation/routes'
-import * as Yup from 'yup'
-import { Formik } from 'formik'
-import { useAuth } from './../hooks/useAuth'
-import Google from './../svgs/google'
-import Facebook from './../svgs/facebook'
-import AuthScreen from '../components/AuthScreen'
+import React, { useState } from 'react';
+import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import authService from '../api/authService';
+import ElButton from '../components/ElButton';
+import ElTextInput from '../components/ElTextInput';
+import Link from '../components/Link';
+import Loader from '../components/Loader';
+import ErrorMessage from '../components/ErrorMessage';
+import ElTitle from './../components/ElTitle';
+import routes from '../navigation/routes';
+import * as Yup from 'yup';
+import { Formik } from 'formik';
+import { useAuth } from './../hooks/useAuth';
+import Google from './../svgs/google';
+import Facebook from './../svgs/facebook';
+import AuthScreen from '../components/AuthScreen';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
   password: Yup.string().required().min(4).label('Password'),
-})
+});
 
 export default function LoginScreen({ navigation }) {
-  const { logIn } = useAuth()
-  const [loading, setLoading] = useState(false)
+  const { logIn } = useAuth();
+  const [loading, setLoading] = useState(false);
 
-  const submit = (values) => {
-    setLoading(true)
-    setTimeout(() => {
-      logIn(
-        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiNGEwNTIyODAtMThiMC00NGRkLThkNDYtODllYjQ4MDA5MjllIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiamlhbmdmQHFxLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjNiZDMxNjhmLTI0MjQtNDA0ZC04MmJiLWM2YjM5YTAzOTcxOSIsImlkIjoiM2JkMzE2OGYtMjQyNC00MDRkLTgyYmItYzZiMzlhMDM5NzE5IiwiZmlyc3ROYW1lIjoiRnJlZCIsImxhc3ROYW1lIjoiRG9hbmNlIiwicGljdHVyZVVybCI6IiIsIm5iZiI6MTY0MjU4MDYzMiwiZXhwIjoxNjQyNjY3MDMyLCJpc3MiOiJFbHl0ZSIsImF1ZCI6Ind3dy5lbHl0ZS5jb20ifQ.PM_ysmZNh861Aa9R0A8YQuguy9I8_pwCuJn0yf6ZGeE'
-      )
-    }, 500)
-  }
+  const submit = async (values) => {
+    setLoading(true);
+    try {
+      const res = await authService.login({ ...values });
+      logIn(res.data.token);
+    } catch (error) {
+      console.log("res:", res);
+      console.log("error:", error);
+      setLoading(false);  
+    }
+    setLoading(false);
+  };
 
   return (
     <>
@@ -40,7 +44,10 @@ export default function LoginScreen({ navigation }) {
         <ScrollView style={styles.container}>
           <ElTitle>Account Login</ElTitle>
           <Formik
-            initialValues={{ email: '', password: '' }}
+            initialValues={{ email: 'eve.holt@reqres.in', password: '' }}
+            // "email": "eve.holt@reqres.in",
+            // "password": "cityslicka"
+            validationSchema={validationSchema}
             onSubmit={(values) => submit(values)}
           >
             {({
@@ -115,13 +122,13 @@ export default function LoginScreen({ navigation }) {
         </ScrollView>
       </AuthScreen>
     </>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    marginBottom: 32
+    marginBottom: 32,
   },
   logo: {
     width: 80,
@@ -160,5 +167,5 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginBottom: 8,
     marginBottom: 8,
-  }
-})
+  },
+});

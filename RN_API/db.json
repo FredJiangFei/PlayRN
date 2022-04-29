@@ -1,4 +1,12 @@
 {
+  "users": [
+    {
+      "id": 1,
+      "email": "fred@qq.com",
+      "password": "123",
+      "sport": "basketball"
+    }
+  ],
   "products": [
     {
       "id": 1,
