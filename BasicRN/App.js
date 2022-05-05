@@ -12,19 +12,23 @@ import RnFlastList from './app/components/RnFlastList';
 
 export default function App() {
   return (
-    /*<View style={styles.container}>
-
-       <RnText>Hello, RN</RnText>
+    <View style={styles.container}>
+    {/* <RnText>Hello, RN</RnText>
       <RnImage source={logo} />
       <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
       <RnButton>Say Hello</RnButton>
       <RnImagePicker /> 
-      <RnFlastList /> 
-    </View>*/
+      <RnFlastList />  */}
 
-    <NavigationContainer>
-      <BottomTabNavigator />
-    </NavigationContainer>
+       {/* TextInput */}
+       {/* Button */}
+       {/* FlatList */}
+       {/* Touchable */}
+    </View>
+
+    // <NavigationContainer>
+    //   <BottomTabNavigator />
+    // </NavigationContainer>
   );
 }
 
