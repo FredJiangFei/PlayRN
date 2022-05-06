@@ -9,11 +9,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './app/navigator/BottomTabNavigator';
 import Card from './app/components/Card';
 import RnFlastList from './app/components/RnFlastList';
+import Header from './app/components/Header';
 
 export default function App() {
   return (
     <View style={styles.container}>
-    {/* <RnText>Hello, RN</RnText>
+    {/* 
+      <RnText>Hello, RN</RnText>
       <RnImage source={logo} />
       <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
       <RnButton>Say Hello</RnButton>
@@ -24,6 +26,9 @@ export default function App() {
        {/* Button */}
        {/* FlatList */}
        {/* Touchable */}
+       {/* Modal visible/animationType */}
+
+
     </View>
 
     // <NavigationContainer>
