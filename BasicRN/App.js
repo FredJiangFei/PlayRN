@@ -10,26 +10,42 @@ import BottomTabNavigator from './app/navigator/BottomTabNavigator';
 import Card from './app/components/Card';
 import RnFlastList from './app/components/RnFlastList';
 import Header from './app/components/Header';
+import StartGame from './app/screens/StartGame';
+import * as Font from 'expo-font';
+import { AppLoading } from 'expo';
+import React, { useState } from 'react';
+
+// const fetchFonts = () => {
+//   Font.loadAsync({
+//     'open-sans': require('./assets/fonts/OpenSans-Regular.ttf')
+//   });
+// };
 
 export default function App() {
+  const [load, setLoad] = useState(false);
+
+  // if (!load)
+  //   return (
+  //     <AppLoading startAsync={fetchFonts} onFinish={() => setLoad(true)} onError={(err)=>console.log(err)}/>
+  //   );
+
   return (
-    <View style={styles.container}>
-    {/* 
-      <RnText>Hello, RN</RnText>
-      <RnImage source={logo} />
-      <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
-      <RnButton>Say Hello</RnButton>
-      <RnImagePicker /> 
-      <RnFlastList />  */}
+    <StartGame />
+    //  <View style={styles.container}>
+    //     <RnText>Hello, RN</RnText>
+    //     <RnImage source={logo} />
+    //     <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
+    //     <RnButton>Say Hello</RnButton>
+    //     <RnImagePicker />
+    //     <RnFlastList />
+    //     </View>
 
-       {/* TextInput */}
-       {/* Button */}
-       {/* FlatList */}
-       {/* Touchable */}
-       {/* Modal visible/animationType */}
-
-
-    </View>
+    //   TextInput
+    //   Button
+    //   FlatList
+    //   Touchable
+    //   Modal visible/animationType
+    //  Keyboard.dismiss()
 
     // <NavigationContainer>
     //   <BottomTabNavigator />
