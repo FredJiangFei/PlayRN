@@ -40,6 +40,7 @@ export default function App() {
     //  <View style={styles.container}>
     //     <RnText>Hello, RN</RnText>
     //     <RnImage source={logo} />
+        // <RnImage source={require('./assets/mario.png')} />
     //     <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
     //     <RnButton>Say Hello</RnButton>
     //     <RnImagePicker />
@@ -47,11 +48,13 @@ export default function App() {
     //     </View>
 
     //   TextInput
-    //   Button
+    //   Button onPress
     //   FlatList
     //   Touchable
     //   Modal visible/animationType
     //  Keyboard.dismiss()
+    // customer font
+    // Image, require(''), resizeMode, image in a circle View container
 
     // <NavigationContainer>
     //   <BottomTabNavigator />
@@ -66,4 +69,13 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  imageContainer: {
+    width: 300,
+    height: 300,
+    borderRadius: 150,
+    borderWidth: 3,
+    borderColor: 'black',
+    overflow: 'hidden',
+    marginVertical: 30
+  }
 });
