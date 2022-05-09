@@ -15,18 +15,24 @@ import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import React, { useState } from 'react';
 
+// 4.22 Add custom fonts
 // const fetchFonts = () => {
 //   Font.loadAsync({
-//     'open-sans': require('./assets/fonts/OpenSans-Regular.ttf')
+//     'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
+//     'open-sans-bold': require('./assets/fonts/OpenSans-Bold.ttf'),
 //   });
 // };
 
 export default function App() {
-  const [load, setLoad] = useState(false);
+  // const [load, setLoad] = useState(false);
 
   // if (!load)
   //   return (
-  //     <AppLoading startAsync={fetchFonts} onFinish={() => setLoad(true)} onError={(err)=>console.log(err)}/>
+  //     <AppLoading
+  //       startAsync={fetchFonts}
+  //       onFinish={() => setLoad(true)}
+  //       onError={(err) => console.log(err)}
+  //     />
   //   );
 
   return (

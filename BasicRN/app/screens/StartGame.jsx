@@ -13,10 +13,10 @@ export default function StartGame() {
   const [number, setNumber] = useState();
 
   const numberInputHandler = (e) => {
-    console.log(e);
+    setNumber(e);
   };
 
-  const confirm = () => {
+  const confirmInputHandler = () => {
     const chosenNumber = parseInt(number);
     if (!isNaN(chosenNumber)) Alert.alert('Invalid number!');
   };
@@ -29,9 +29,10 @@ export default function StartGame() {
           style={styles.input}
           keyboardType="number-pad"
           onChangeText={numberInputHandler}
+          value={number}
         />
         <Button title="Cancel" />
-        <Button title="Confirm" onPress={confirm} />
+        <Button title="Confirm" onPress={confirmInputHandler} />
       </SafeAreaView>
     </TouchableWithoutFeedback>
   );
@@ -43,6 +44,7 @@ const styles = StyleSheet.create({
     marginTop: 32,
     marginBottom: 16,
     fontSize: 24,
+    fontFamily: 'open-sans-bold'
   },
   input: {
     borderBottomWidth: 2,
