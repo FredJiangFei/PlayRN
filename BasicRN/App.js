@@ -40,7 +40,7 @@ export default function App() {
     //  <View style={styles.container}>
     //     <RnText>Hello, RN</RnText>
     //     <RnImage source={logo} />
-        // <RnImage source={require('./assets/mario.png')} />
+    // <RnImage source={require('./assets/mario.png')} />
     //     <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
     //     <RnButton>Say Hello</RnButton>
     //     <RnImagePicker />
@@ -55,6 +55,7 @@ export default function App() {
     //  Keyboard.dismiss()
     // customer font
     // Image, require(''), resizeMode, image in a circle View container
+    // @expo/vector-icons, Ionicons
 
     // <NavigationContainer>
     //   <BottomTabNavigator />
@@ -76,6 +77,6 @@ const styles = StyleSheet.create({
     borderWidth: 3,
     borderColor: 'black',
     overflow: 'hidden',
-    marginVertical: 30
-  }
+    marginVertical: 30,
+  },
 });
