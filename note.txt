@@ -1,4 +1,13 @@
 https://reactnative.dev/docs/components-and-apis
 
+第三方控件
+https://docs.expo.dev/guides/userinterface/
 
-video: 4.31
+# Responsive & Platform
+1. detect dimensions & orientation
+2. detect device platform
+3. adjust base on dimensions & orientation / platform
+
+
+
+video: 5.8

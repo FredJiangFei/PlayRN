@@ -14,6 +14,7 @@ import StartGame from './app/screens/StartGame';
 import * as Font from 'expo-font';
 import { AppLoading } from 'expo';
 import React, { useState } from 'react';
+import { Dimensions } from 'react-native-web';
 
 // 4.22 Add custom fonts
 // const fetchFonts = () => {
@@ -47,6 +48,7 @@ export default function App() {
     //     <RnFlastList />
     //     </View>
 
+    // #### Game guess number
     //   TextInput
     //   Button onPress
     //   FlatList
@@ -56,6 +58,21 @@ export default function App() {
     // customer font
     // Image, require(''), resizeMode, image in a circle View container
     // @expo/vector-icons, Ionicons
+    // 第三方控件 https://docs.expo.dev/guides/userinterface/
+    // ScrollView, contentContainerStyle
+    // FlatList, default arg is last arg, contentContainerStyle
+
+    // #### Responsive & Platform
+
+    // Dimensions
+    // 1. box: width + minWidth / maxWidth
+    // 2. button width: Dimensions.get('window').width / 3
+    //  Dimensions.get('window').heigh > 600 ? 20 : 10
+    //  image: Dimensions.get('window').width * 0.7
+
+    // Rotate
+    // app.json, orientation: portrait, landscape, default
+    // KeyboardAvoidingView 避免输入框弹出遮挡input, behavior: position, keyboardVerticalOffset
 
     // <NavigationContainer>
     //   <BottomTabNavigator />
