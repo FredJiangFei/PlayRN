@@ -66,13 +66,25 @@ export default function App() {
 
     // Dimensions
     // 1. box: width + minWidth / maxWidth
-    // 2. button width: Dimensions.get('window').width / 3
+    // 2. button width: Dimensions.get('window').width / 3 (only calculate when app start)
     //  Dimensions.get('window').heigh > 600 ? 20 : 10
     //  image: Dimensions.get('window').width * 0.7
 
     // Rotate
     // app.json, orientation: portrait, landscape, default
-    // KeyboardAvoidingView 避免输入框弹出遮挡input, behavior: position, keyboardVerticalOffset
+    // KeyboardAvoidingView 避免输入框弹出遮挡input, behavior: position/padding, keyboardVerticalOffset
+    // Dimensions.addEventListener('change', ()=>{ });
+    // import { ScreenOrientation } from 'expo', lockAsync/
+
+    // # Platform
+    // Platform.OS === 'android' | 'ios'
+    // Platform.select(ios: iosStyle, android: androidStyle)
+    // Platform.Version
+    // Button.ios.js/Button.android.js
+
+    // TouchableNativeFeedback
+    // SafeAreaView
+  
 
     // <NavigationContainer>
     //   <BottomTabNavigator />
