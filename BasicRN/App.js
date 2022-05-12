@@ -85,6 +85,12 @@ export default function App() {
     // TouchableNativeFeedback
     // SafeAreaView
   
+    // # Navigation
+    // Different with Web
+    // Web, url => Component
+    // Native, Tabs/Stack => Component
+    // react-navigation 
+
 
     // <NavigationContainer>
     //   <BottomTabNavigator />
