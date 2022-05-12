@@ -6,7 +6,7 @@ import RnText from './app/components/RnText';
 import RnImage from './app/components/RnImage';
 import RnButton from './app/components/RnButton';
 import { NavigationContainer } from '@react-navigation/native';
-import BottomTabNavigator from './app/navigator/BottomTabNavigator';
+import BottomTabNavigator from './app/navigation/BottomTabNavigator';
 import Card from './app/components/Card';
 import RnFlastList from './app/components/RnFlastList';
 import Header from './app/components/Header';
@@ -37,7 +37,7 @@ export default function App() {
   //   );
 
   return (
-    <StartGame />
+    // <StartGame />
     //  <View style={styles.container}>
     //     <RnText>Hello, RN</RnText>
     //     <RnImage source={logo} />
@@ -84,17 +84,27 @@ export default function App() {
 
     // TouchableNativeFeedback
     // SafeAreaView
-  
+
     // # Navigation
     // Different with Web
     // Web, url => Component
     // Native, Tabs/Stack => Component
-    // react-navigation 
+    // react-navigation
 
+    // version 4
+    // stack navigator
+    // 1. createStackNavigator
+    // 2. NavigationContainer
+    // navigation.navigate('Home')}
+    // navigation.push('Home')}
+    // navigation.goBack()
+    // navigation.pop()
+    // navigation.popToTop()
+    // navigation.replace(), login
 
-    // <NavigationContainer>
-    //   <BottomTabNavigator />
-    // </NavigationContainer>
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
   );
 }
 

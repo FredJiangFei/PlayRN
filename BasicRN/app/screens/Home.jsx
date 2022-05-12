@@ -11,6 +11,7 @@ const Home = ({ navigation }) => {
       <Button
         title="Go to About Screen"
         onPress={() => navigation.navigate('About')}
+        // onPress={() => navigation.push('Home')}
       />
     </View>
   );

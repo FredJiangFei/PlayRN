@@ -12,4 +12,9 @@ const MainStackNavigator = () => {
     </Stack.Navigator>
   );
 };
+
+// const MainStackNavigator = createStackNavigator({
+//   Home: Home,
+//   About: About,
+// });
 export { MainStackNavigator };
