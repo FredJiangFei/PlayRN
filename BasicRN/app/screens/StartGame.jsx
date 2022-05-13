@@ -5,9 +5,12 @@ import {
   TextInput,
   Button,
   SafeAreaView,
+  View,
   Keyboard,
+  Alert,
 } from 'react-native';
 import { TouchableWithoutFeedback } from 'react-native-gesture-handler';
+import RnButton from '../components/RnButton';
 
 export default function StartGame() {
   const [number, setNumber] = useState();
@@ -17,12 +20,13 @@ export default function StartGame() {
   };
 
   const confirmInputHandler = () => {
+    Alert.alert('Invalid number!');
     const chosenNumber = parseInt(number);
     if (!isNaN(chosenNumber)) Alert.alert('Invalid number!');
   };
 
   return (
-    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
+    <TouchableWithoutFeedback>
       <SafeAreaView>
         <Text style={styles.title}>Start a New Game</Text>
         <TextInput
@@ -32,7 +36,7 @@ export default function StartGame() {
           value={number}
         />
         <Button title="Cancel" />
-        <Button title="Confirm" onPress={confirmInputHandler} />
+        <RnButton onPress={confirmInputHandler}>Confirm</RnButton>
       </SafeAreaView>
     </TouchableWithoutFeedback>
   );
@@ -44,7 +48,7 @@ const styles = StyleSheet.create({
     marginTop: 32,
     marginBottom: 16,
     fontSize: 24,
-    fontFamily: 'open-sans-bold'
+    fontFamily: 'open-sans-bold',
   },
   input: {
     borderBottomWidth: 2,

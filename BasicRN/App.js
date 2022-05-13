@@ -4,19 +4,17 @@ import logo from './assets/mario.png';
 import RnImagePicker from './app/components/RnImagePicker';
 import RnText from './app/components/RnText';
 import RnImage from './app/components/RnImage';
-import RnButton from './app/components/RnButton';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './app/navigation/BottomTabNavigator';
 import Card from './app/components/Card';
 import RnFlastList from './app/components/RnFlastList';
 import Header from './app/components/Header';
 import StartGame from './app/screens/StartGame';
-import * as Font from 'expo-font';
-import { AppLoading } from 'expo';
+// import * as Font from 'expo-font';
+// import { AppLoading } from 'expo';
 import React, { useState } from 'react';
 import { Dimensions } from 'react-native-web';
 
-// 4.22 Add custom fonts
 // const fetchFonts = () => {
 //   Font.loadAsync({
 //     'open-sans': require('./assets/fonts/OpenSans-Regular.ttf'),
@@ -37,16 +35,15 @@ export default function App() {
   //   );
 
   return (
-    // <StartGame />
+    <StartGame />
     //  <View style={styles.container}>
     //     <RnText>Hello, RN</RnText>
     //     <RnImage source={logo} />
-    // <RnImage source={require('./assets/mario.png')} />
+    //     <RnImage source={require('./assets/mario.png')} />
     //     <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
-    //     <RnButton>Say Hello</RnButton>
     //     <RnImagePicker />
     //     <RnFlastList />
-    //     </View>
+    //  </View>
 
     // #### Game guess number
     //   TextInput
@@ -102,9 +99,9 @@ export default function App() {
     // navigation.popToTop()
     // navigation.replace(), login
 
-    <NavigationContainer>
-      <BottomTabNavigator />
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <BottomTabNavigator />
+    // </NavigationContainer>
   );
 }
 
