@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, View, ScrollView } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import authService from '../api/authService';
 import ElButton from '../components/ElButton';
 import ElTextInput from '../components/ElTextInput';
@@ -20,6 +20,11 @@ const validationSchema = Yup.object().shape({
   password: Yup.string().required().min(4).label('Password'),
 });
 
+const initValue = {
+  email: '',
+  password: '',
+};
+
 export default function LoginScreen({ navigation }) {
   const { logIn } = useAuth();
   const [loading, setLoading] = useState(false);
@@ -27,105 +32,87 @@ export default function LoginScreen({ navigation }) {
   const submit = async (values) => {
     setLoading(true);
     // const res = await authService.login(values.email, values.password);
-    logIn("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiNGEwNTIyODAtMThiMC00NGRkLThkNDYtODllYjQ4MDA5MjllIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiamlhbmdmQHFxLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjNiZDMxNjhmLTI0MjQtNDA0ZC04MmJiLWM2YjM5YTAzOTcxOSIsImlkIjoiM2JkMzE2OGYtMjQyNC00MDRkLTgyYmItYzZiMzlhMDM5NzE5IiwiZmlyc3ROYW1lIjoiRnJlZCIsImxhc3ROYW1lIjoiRG9hbmNlIiwicGljdHVyZVVybCI6IiIsIm5iZiI6MTY0MjU4MDYzMiwiZXhwIjoxNjQyNjY3MDMyLCJpc3MiOiJFbHl0ZSIsImF1ZCI6Ind3dy5lbHl0ZS5jb20ifQ.PM_ysmZNh861Aa9R0A8YQuguy9I8_pwCuJn0yf6ZGeE");
-    setLoading(false);
+    setTimeout(() => {
+      logIn(
+        'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9oYXNoIjoiNGEwNTIyODAtMThiMC00NGRkLThkNDYtODllYjQ4MDA5MjllIiwiaHR0cDovL3NjaGVtYXMueG1sc29hcC5vcmcvd3MvMjAwNS8wNS9pZGVudGl0eS9jbGFpbXMvZW1haWxhZGRyZXNzIjoiamlhbmdmQHFxLmNvbSIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL3NpZCI6IjNiZDMxNjhmLTI0MjQtNDA0ZC04MmJiLWM2YjM5YTAzOTcxOSIsImlkIjoiM2JkMzE2OGYtMjQyNC00MDRkLTgyYmItYzZiMzlhMDM5NzE5IiwiZmlyc3ROYW1lIjoiRnJlZCIsImxhc3ROYW1lIjoiRG9hbmNlIiwicGljdHVyZVVybCI6IiIsIm5iZiI6MTY0MjU4MDYzMiwiZXhwIjoxNjQyNjY3MDMyLCJpc3MiOiJFbHl0ZSIsImF1ZCI6Ind3dy5lbHl0ZS5jb20ifQ.PM_ysmZNh861Aa9R0A8YQuguy9I8_pwCuJn0yf6ZGeE'
+      );
+      setLoading(false);
+    }, 1000);
   };
 
   return (
-    <>
+    <AuthScreen>
       <Loader visible={loading} />
-      <AuthScreen>
-        <ScrollView style={styles.container}>
-          <ElTitle>Account Login</ElTitle>
-          <Formik
-            initialValues={{
-              email: 'eve.holt@reqres.in',
-              password: 'cityslicka',
-            }}
-            // "email": "eve.holt@reqres.in",
-            // "password": "cityslicka"
-            validationSchema={validationSchema}
-            onSubmit={(values) => submit(values)}
-          >
-            {({
-              handleChange,
-              handleSubmit,
-              errors,
-              setFieldTouched,
-              touched,
-            }) => (
-              <>
-                <ElTextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  icon="email"
-                  name="email"
-                  placeholder="Email or Phone number"
-                  keyboardType="email-address"
-                  textContentType="emailAddress"
-                  onBlur={() => setFieldTouched('email')}
-                  onChangeText={handleChange('email')}
-                />
-                <ErrorMessage
-                  error={errors['email']}
-                  visible={touched['email']}
-                />
+      <ElTitle>Account Login</ElTitle>
+      <Formik
+        initialValues={initValue}
+        validationSchema={validationSchema}
+        onSubmit={(values) => submit(values)}
+      >
+        {({ handleChange, handleSubmit, errors, setFieldTouched, touched }) => (
+          <>
+            <ElTextInput
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="email"
+              name="email"
+              placeholder="Email or Phone number"
+              keyboardType="email-address"
+              textContentType="emailAddress"
+              onBlur={() => setFieldTouched('email')}
+              onChangeText={handleChange('email')}
+            />
+            <ErrorMessage error={errors['email']} visible={touched['email']} />
 
-                <ElTextInput
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  icon="lock"
-                  name="password"
-                  placeholder="Password"
-                  secureTextEntry
-                  textContentType="password"
-                  onBlur={() => setFieldTouched('password')}
-                  onChangeText={handleChange('password')}
-                />
-                <ErrorMessage
-                  error={errors['password']}
-                  visible={touched['password']}
-                />
+            <ElTextInput
+              autoCapitalize="none"
+              autoCorrect={false}
+              icon="lock"
+              name="password"
+              placeholder="Password"
+              secureTextEntry
+              textContentType="password"
+              onBlur={() => setFieldTouched('password')}
+              onChangeText={handleChange('password')}
+            />
+            <ErrorMessage
+              error={errors['password']}
+              visible={touched['password']}
+            />
 
-                <Text
-                  style={{
-                    textAlign: 'center',
-                    marginTop: 16,
-                    marginBottom: 8,
-                  }}
-                >
-                  Forgot the password? Request for a{' '}
-                  <Link to={routes.Register}>Password Reset</Link> or{' '}
-                  <Link to={routes.Register}>Contact us</Link>
-                </Text>
+            <Text
+              style={{
+                textAlign: 'center',
+                marginTop: 16,
+                marginBottom: 8,
+              }}
+            >
+              Forgot the password? Request for a{' '}
+              <Link to={routes.Register}>Password Reset</Link> or{' '}
+              <Link to={routes.Register}>Contact us</Link>
+            </Text>
 
-                <Text style={styles.or}>or</Text>
-                <Text style={styles.with}>
-                  Sign In with your Google or Facebook{' '}
-                </Text>
+            <Text style={styles.or}>or</Text>
+            <Text style={styles.with}>
+              Sign In with your Google or Facebook{' '}
+            </Text>
 
-                <View style={styles.google}>
-                  <Google />
-                  <Facebook />
-                </View>
-                <ElButton title="Sign in" onPress={handleSubmit} />
-                <Text style={{ textAlign: 'center' }}>
-                  <Link to={routes.Register}>Sign up for free</Link>
-                </Text>
-              </>
-            )}
-          </Formik>
-        </ScrollView>
-      </AuthScreen>
-    </>
+            <View style={styles.google}>
+              <Google />
+              <Facebook />
+            </View>
+            <ElButton title="Sign in" onPress={handleSubmit} />
+            <Text style={{ textAlign: 'center', marginBottom: 32 }}>
+              <Link to={routes.Register}>Sign up for free</Link>
+            </Text>
+          </>
+        )}
+      </Formik>
+    </AuthScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    marginBottom: 32,
-  },
   logo: {
     width: 80,
     height: 80,

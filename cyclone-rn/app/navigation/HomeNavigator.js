@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import routes from './routes';
@@ -15,10 +15,10 @@ export default HomeNavigator = () => {
       headerShown: false,
       tabBarIcon: ({ color, size }) => (
         <MaterialCommunityIcons name={icon} color={color} size={size} />
-      )
+      ),
     };
   };
-
+  
   return (
     <Tab.Navigator>
       <Tab.Screen

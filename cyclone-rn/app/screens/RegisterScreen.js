@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, ScrollView, View, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View } from 'react-native';
 import CategoryPickerItem from '../components/CategoryPickerItem';
 import ElPicker from '../components/ElPicker';
 import ImageInputList from '../components/ImageInputList';
@@ -11,7 +11,6 @@ import Google from './../svgs/google';
 import Facebook from './../svgs/facebook';
 import AuthScreen from '../components/AuthScreen';
 import GoBackDark from '../svgs/goBackDark';
-import ElIconButton from '../components/ElIconButton';
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label('Title'),
@@ -59,74 +58,66 @@ export default function RegisterScreen({ navigation }) {
 
   return (
     <AuthScreen>
-      <ScrollView style={styles.container}>
-        <ElIconButton onPress={() => navigation.goBack()}>
-          <GoBackDark />
-        </ElIconButton>
-        <ElTitle>Account Registration</ElTitle>
-        <ElTextInput
-          autoCapitalize="none"
-          autoCorrect={false}
-          name="firstName"
-          placeholder="First Name"
-        />
-        <ElTextInput
-          autoCapitalize="none"
-          autoCorrect={false}
-          name="lastName"
-          placeholder="Last Name"
-        />
-        <ElTextInput
-          autoCapitalize="none"
-          autoCorrect={false}
-          name="email"
-          placeholder="Email"
-        />
-        <ElTextInput
-          autoCapitalize="none"
-          autoCorrect={false}
-          name="password"
-          placeholder="Password"
-          secureTextEntry
-        />
+      <GoBackDark />
+      <ElTitle>Account Registration</ElTitle>
+      <ElTextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        name="firstName"
+        placeholder="First Name"
+      />
+      <ElTextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        name="lastName"
+        placeholder="Last Name"
+      />
+      <ElTextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        name="email"
+        placeholder="Email"
+      />
+      <ElTextInput
+        autoCapitalize="none"
+        autoCorrect={false}
+        name="password"
+        placeholder="Password"
+        secureTextEntry
+      />
 
-        <ElPicker
-          icon="apps"
-          items={sports}
-          name="sports"
-          numberOfColumns={3}
-          PickerItem={CategoryPickerItem}
-          onSelectedItem={setSport}
-          selectedItem={sport}
-          placeholder="Sports"
-        />
+      <ElPicker
+        icon="apps"
+        items={sports}
+        name="sports"
+        numberOfColumns={3}
+        PickerItem={CategoryPickerItem}
+        onSelectedItem={setSport}
+        selectedItem={sport}
+        placeholder="Sports"
+      />
 
-        <ElButton title="Create an account" />
+      <ElButton title="Create an account" />
 
-        <Text style={styles.or}>or</Text>
-        <Text style={styles.with}>Sign In with your Google or Facebook </Text>
+      <Text style={styles.or}>or</Text>
+      <Text style={styles.with}>Sign In with your Google or Facebook </Text>
 
-        <View style={styles.google}>
-          <Google />
-          <Facebook />
-        </View>
+      <View style={styles.google}>
+        <Google />
+        <Facebook />
+      </View>
 
-        {/* <ImageInputList
+      {/* <ImageInputList
         imageUris={images}
         onAddImage={handleAdd}
         onRemoveImage={handleRemove}
       />
        */}
-      </ScrollView>
     </AuthScreen>
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
-    padding: 10,
-    marginBottom: 16,
-  },
   or: {
     textAlign: 'center',
     opacity: 0.2,
