@@ -22,7 +22,6 @@ const styles = StyleSheet.create({
         width: '100%',
         marginVertical: 10,
     },
-
     text: {
         color: colors.white,
         fontSize: 18,

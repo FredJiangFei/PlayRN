@@ -20,13 +20,12 @@ export default function StartGame() {
   };
 
   const confirmInputHandler = () => {
-    Alert.alert('Invalid number!');
     const chosenNumber = parseInt(number);
     if (!isNaN(chosenNumber)) Alert.alert('Invalid number!');
   };
 
   return (
-    <TouchableWithoutFeedback>
+    <TouchableWithoutFeedback onPress={() => Keyboard.dismiss()}>
       <SafeAreaView>
         <Text style={styles.title}>Start a New Game</Text>
         <TextInput
@@ -35,8 +34,8 @@ export default function StartGame() {
           onChangeText={numberInputHandler}
           value={number}
         />
-        <Button title="Cancel" />
-        <RnButton onPress={confirmInputHandler}>Confirm</RnButton>
+        <RnButton title="Cancel" />
+        <RnButton title="Confirm" onPress={confirmInputHandler} />
       </SafeAreaView>
     </TouchableWithoutFeedback>
   );

@@ -10,7 +10,6 @@ import AccountScreen from '../screens/AccountScreen';
 const Tab = createBottomTabNavigator();
 
 export default HomeNavigator = () => {
-
   const getOptions = (icon) => {
     return {
       headerShown: false,

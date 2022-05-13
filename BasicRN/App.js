@@ -10,8 +10,6 @@ import Card from './app/components/Card';
 import RnFlastList from './app/components/RnFlastList';
 import Header from './app/components/Header';
 import StartGame from './app/screens/StartGame';
-// import * as Font from 'expo-font';
-// import { AppLoading } from 'expo';
 import React, { useState } from 'react';
 import { Dimensions } from 'react-native-web';
 
