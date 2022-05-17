@@ -6,23 +6,27 @@ import TeamListScreen from '../screens/TeamListScreen';
 
 const Stack = createNativeStackNavigator();
 
-const TeamNavigator = () => (
-  <Stack.Navigator mode="modal">
-    <Stack.Screen
-      name={routes.TeamList}
-      component={TeamListScreen}
-      options={{
-        headerShown: false,
-      }}
-    />
-    <Stack.Screen
-      name={routes.TeamDetails}
-      component={TeamDetailsScreen}
-      options={{
-        headerShown: false,
-      }}
-    />
-  </Stack.Navigator>
-);
+const TeamNavigator = () => {
+  const getOptions = () => {
+    return {
+      headerShown: false,
+    };
+  };
+
+  return (
+    <Stack.Navigator mode="modal">
+      <Stack.Screen
+        name={routes.TeamList}
+        component={TeamListScreen}
+        options={getOptions()}
+      />
+      <Stack.Screen
+        name={routes.TeamDetails}
+        component={TeamDetailsScreen}
+        options={getOptions()}
+      />
+    </Stack.Navigator>
+  );
+};
 
 export default TeamNavigator;
