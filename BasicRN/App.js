@@ -51,15 +51,14 @@ export default function App() {
     // #### Game guess number
     //   TextInput
     //   Button onPress
-    //   FlatList
+    //   FlatList, numColumns
     //   Touchable
     //   Modal visible/animationType
     //  Keyboard.dismiss()
     // customer font
     // Image, require(''), resizeMode, image in a circle View container
     // @expo/vector-icons, Ionicons
-    // 第三方控件 https://docs.expo.dev/guides/userinterface/
-    // ScrollView, contentContainerStyle
+    // 第三方控件 https://docs.expo.dev/guides/userinterface/ // ScrollView, contentContainerStyle
     // FlatList, default arg is last arg, contentContainerStyle
 
     // #### Responsive & Platform

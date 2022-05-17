@@ -2,7 +2,8 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MainStackNavigator } from './MainStackNavigator';
 import { ContactStackNavigator } from './ContactStackNavigator';
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { TodoStackNavigator } from './TodoStackNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -14,7 +15,7 @@ const BottomTabNavigator = () => {
         component={MainStackNavigator}
         options={{
           headerShown: false,
-          tabBarIcon: makeIconRender("home")
+          tabBarIcon: makeIconRender('home'),
         }}
       />
       <Tab.Screen
@@ -22,7 +23,14 @@ const BottomTabNavigator = () => {
         component={ContactStackNavigator}
         options={{
           headerShown: false,
-          tabBarIcon: makeIconRender("cog")
+          tabBarIcon: makeIconRender('cog'),
+        }}
+      />
+      <Tab.Screen
+        name="Todo"
+        component={TodoStackNavigator}
+        options={{
+          headerShown: false,
         }}
       />
     </Tab.Navigator>
