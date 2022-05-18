@@ -4,12 +4,23 @@ import { MainStackNavigator } from './MainStackNavigator';
 import { ContactStackNavigator } from './ContactStackNavigator';
 import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import { TodoStackNavigator } from './TodoStackNavigator';
+import { Text, TouchableOpacity } from 'react-native';
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
   return (
     <Tab.Navigator tabBarOptions={{ activeTintColor: 'red' }}>
+      {/* options={{
+      headerLeft: () => (
+        <TouchableOpacity
+          onPress={() => alert('Left Menu Clicked')}
+          style={{ marginLeft: 10 }}
+        >
+          <Text style={{ color: 'white' }}>Left Menu</Text>
+        </TouchableOpacity>
+      ),
+    }} */}
       <Tab.Screen
         name="Home"
         component={MainStackNavigator}
