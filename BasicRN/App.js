@@ -42,6 +42,9 @@ export default function App() {
     //     <RnImagePicker />
     //     <RnFlastList />
     //  </View>
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
 
     // #### Game guess number
     //   TextInput
@@ -97,10 +100,6 @@ export default function App() {
     // navigation.replace(), login
 
     // defaultNavigationOptions
-
-    <NavigationContainer>
-      <BottomTabNavigator />
-    </NavigationContainer>
   );
 }
 
