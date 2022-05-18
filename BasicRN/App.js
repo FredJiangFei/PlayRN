@@ -100,6 +100,25 @@ export default function App() {
     // navigation.replace(), login
 
     // defaultNavigationOptions
+    // mode: modal 从下面弹出
+    // initialRouteName
+    // useScreens/enableScreens 'react-native-screens' 提升性能
+
+    // ImageBackground
+    // react-navigation-header-buttons,
+
+    // tab navigator
+    // createBottomTabNavigator
+    // tabBarOptions: activeTintColor
+
+    // react-navigation-material-bottom-tabs / createMaterialBottomTabNavigator
+    // shifting
+    // tabBarColor
+
+    // react-native-paper
+
+    // drawer
+    // drawer > tab > stack
   );
 }
 

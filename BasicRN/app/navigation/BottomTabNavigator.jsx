@@ -2,19 +2,20 @@ import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { MainStackNavigator } from './MainStackNavigator';
 import { ContactStackNavigator } from './ContactStackNavigator';
-import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { MaterialCommunityIcons, Ionicons } from '@expo/vector-icons';
 import { TodoStackNavigator } from './TodoStackNavigator';
 
 const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator tabBarOptions={{ activeTintColor: 'red' }}>
       <Tab.Screen
         name="Home"
         component={MainStackNavigator}
         options={{
           headerShown: false,
+          tabBarLabel:'New home',
           tabBarIcon: makeIconRender('home'),
         }}
       />
@@ -38,8 +39,9 @@ const BottomTabNavigator = () => {
 };
 
 function makeIconRender(name) {
-  return ({ color, size }) => (
-    <MaterialCommunityIcons name={name} color={color} size={size} />
+  return ({ color, size, tintColor }) => (
+    // <MaterialCommunityIcons name={name} color={color} size={size} />
+    <Ionicons name={name} color={color} size={size}/>
   );
 }
 
