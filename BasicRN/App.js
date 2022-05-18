@@ -33,7 +33,7 @@ export default function App() {
   //   );
 
   return (
-    <StartGame />
+    // <StartGame />
     //  <View style={styles.container}>
     //     <RnText>Hello, RN</RnText>
     //     <RnImage source={logo} />
@@ -96,9 +96,11 @@ export default function App() {
     // navigation.popToTop()
     // navigation.replace(), login
 
-    // <NavigationContainer>
-    //   <BottomTabNavigator />
-    // </NavigationContainer>
+    // defaultNavigationOptions
+
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
   );
 }
 
