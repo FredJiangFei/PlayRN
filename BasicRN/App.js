@@ -12,6 +12,7 @@ import Header from './app/components/Header';
 import StartGame from './app/screens/StartGame';
 import React, { useState } from 'react';
 import { Dimensions } from 'react-native-web';
+import 'react-native-gesture-handler';
 
 // const fetchFonts = () => {
 //   Font.loadAsync({
