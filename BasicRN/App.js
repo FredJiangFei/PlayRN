@@ -51,7 +51,7 @@ export default function App() {
     //   TextInput
     //   Button onPress
     //   FlatList, numColumns
-    //   Touchable
+    //   Touchable, useForeground
     //   Modal visible/animationType
     //  Keyboard.dismiss()
     // customer font
@@ -119,7 +119,13 @@ export default function App() {
     // react-native-paper
 
     // drawer
+    // https://snack.expo.dev/
     // drawer > tab > stack
+
+    // Switch, value, onValueChange, trackColor(true: 'red'), thumbColor
+
+    //Firebase
+    
   );
 }
 

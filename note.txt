@@ -10,4 +10,4 @@ https://docs.expo.dev/guides/userinterface/
 
 
 
-video: 6.34
+video: 10.5

@@ -21,8 +21,8 @@ const validationSchema = Yup.object().shape({
 });
 
 const initValue = {
-  email: '',
-  password: '',
+  email: 'fred@qq.com',
+  password: '123123',
 };
 
 export default function LoginScreen({ navigation }) {

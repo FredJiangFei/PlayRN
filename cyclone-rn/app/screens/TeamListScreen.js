@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FlatList, StyleSheet, Switch, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Switch, Text, View, Button } from 'react-native'
 import routes from '../navigation/routes'
 import ListItem from './../components/ListItem'
 import ListItemSeparator from '../components/ListItemSeparator'
@@ -59,12 +59,18 @@ export default function TeamListScreen({ navigation }) {
     setTeams((teams) => [...teams, ...newTeams])
   }
 
+  const createTeam = async () => {
+    alert('123');
+    await teamService.createTeam();
+  }
+
   return (
     <>
       <Loader visible={loading} />
       <View style={styles.switch}>
         <Text>Open to join the team</Text>
         <Switch value={open} onValueChange={setOpen} />
+        <Button title='Create team' onPress={createTeam}/>
       </View>
       {!loading && (
         <FlatList
