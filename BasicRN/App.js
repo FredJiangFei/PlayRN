@@ -125,7 +125,18 @@ export default function App() {
     // Switch, value, onValueChange, trackColor(true: 'red'), thumbColor
 
     //Firebase
-    
+
+    // navigation.addListener
+
+    // pull to refresh: FlatList
+    // refreshing={refreshing}
+    // onRefresh={loadTeams}
+
+    // #Authentication
+    // createSwitchNavigator
+    // KeyboardAvoidingView
+    // LinearGradient 'expo-linear-gradient'
+    // Firebase Authentication API
   );
 }
 
