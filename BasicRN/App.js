@@ -40,12 +40,12 @@ export default function App() {
     //     <RnImage source={logo} />
     //     <RnImage source={require('./assets/mario.png')} />
     //     <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
-    //     <RnImagePicker />
+    <RnImagePicker />
     //     <RnFlastList />
     //  </View>
-    <NavigationContainer>
-      <BottomTabNavigator />
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <BottomTabNavigator />
+    // </NavigationContainer>
 
     // #### Game guess number
     //   TextInput
@@ -137,6 +137,16 @@ export default function App() {
     // KeyboardAvoidingView
     // LinearGradient 'expo-linear-gradient'
     // Firebase Authentication API
+
+    // # native device feature
+    // Camera
+    // ImagePicker, launchCameraAsync: allowsEditing, aspect, quality
+    // Permissions.CAMERA / CAMERA_ROLL
+    // FileSystem, expo install expo-file-system
+    // SQLite
+    // Location, expo-location, getCurrentLocationAsync
+    // Map, google map static API, show in Image
+    // MapView, region, onPress, Marker
   );
 }
 
