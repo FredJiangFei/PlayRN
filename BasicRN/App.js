@@ -147,6 +147,7 @@ export default function App() {
     // Location, expo-location, getCurrentLocationAsync
     // Map, google map static API, show in Image
     // MapView, region, onPress, Marker
+    // google maps geocoding API
   );
 }
 
