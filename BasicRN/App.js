@@ -148,6 +148,11 @@ export default function App() {
     // Map, google map static API, show in Image
     // MapView, region, onPress, Marker
     // google maps geocoding API
+
+    // Build
+    // # Expo - Managed Workflow
+    // # Expo - Bare Workflow，用React Native CLI创建，但是为支持Expo package做了准备
+    // # React Native CLI
   );
 }
 
