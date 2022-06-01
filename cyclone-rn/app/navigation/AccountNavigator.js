@@ -1,12 +1,12 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import routes from './routes';
-import TeamDetailsScreen from '../screens/TeamDetailsScreen';
-import TeamListScreen from '../screens/TeamListScreen';
+import AccountScreen from '../screens/AccountScreen';
+import SettingsScreen from '../screens/SettingsScreen';
 
 const Stack = createNativeStackNavigator();
 
-const TeamNavigator = () => {
+const AccountNavigator = () => {
   const getOptions = () => {
     return {
       headerShown: false,
@@ -14,19 +14,19 @@ const TeamNavigator = () => {
   };
 
   return (
-    <Stack.Navigator mode="modal">
+    <Stack.Navigator initialRouteName={routes.Account}>
       <Stack.Screen
-        name={routes.TeamList}
-        component={TeamListScreen}
+        name={routes.Account}
+        component={AccountScreen}
         options={getOptions()}
       />
       <Stack.Screen
-        name={routes.TeamDetails}
-        component={TeamDetailsScreen}
+        name={routes.Settings}
+        component={SettingsScreen}
         options={getOptions()}
       />
     </Stack.Navigator>
   );
 };
 
-export default TeamNavigator;
+export default AccountNavigator;

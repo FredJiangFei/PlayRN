@@ -40,12 +40,12 @@ export default function App() {
     //     <RnImage source={logo} />
     //     <RnImage source={require('./assets/mario.png')} />
     //     <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
-    <RnImagePicker />
+    // <RnImagePicker />
     //     <RnFlastList />
     //  </View>
-    // <NavigationContainer>
-    //   <BottomTabNavigator />
-    // </NavigationContainer>
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
 
     // #### Game guess number
     //   TextInput
@@ -153,6 +153,11 @@ export default function App() {
     // # Expo - Managed Workflow
     // # Expo - Bare Workflow，用React Native CLI创建，但是为支持Expo package做了准备
     // # React Native CLI
+
+    // ### Deployment
+    // test, config, add icon and splash, deploy
+    // ### app.config
+    // slug, privacy
   );
 }
 

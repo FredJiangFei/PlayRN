@@ -6,8 +6,9 @@ export default Object.freeze({
   Calendar: 'Calendar',
   Achievement: 'Achievement',
   Organizations: 'Organizations',
-  Teams: 'Teams',
-  TeamList: 'TeamList',
-  TeamDetails: 'TeamDetails',
+  Users: 'Users',
+  UserList: 'UserList',
+  UserDetails: 'UserDetails',
   Account: 'Account',
-})
+  Settings: 'Settings',
+});

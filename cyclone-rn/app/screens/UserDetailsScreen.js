@@ -2,13 +2,14 @@ import React from 'react';
 import { StyleSheet, View, Image, Text } from 'react-native';
 import colors from '../config/colors';
 
-export default function TeamDetailsScreen({ route, navigation }) {
-  const team = route.params;
+export default function UserDetailsScreen({ route, navigation }) {
+  const user = route.params;
   return (
     <View>
-      <Image style={styles.image} source={{ uri: team.imageUrl }} />
+      <Image style={styles.image} source={{ uri: user.avatar }} />
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{team.name}</Text>
+        <Text style={styles.title}>{user.first_name} {user.last_name}</Text>
+        <Text style={styles.title}>{user.email}</Text>
       </View>
     </View>
   );

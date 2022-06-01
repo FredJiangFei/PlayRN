@@ -4,8 +4,8 @@ import { MaterialCommunityIcons } from '@expo/vector-icons';
 import routes from './routes';
 import CalendarScreen from '../screens/CalendarScreen';
 import HomeScreen from '../screens/HomeScreen';
-import TeamNavigator from './TeamNavigator';
-import AccountScreen from '../screens/AccountScreen';
+import UserNavigator from './UserNavigator';
+import AccountNavigator from './AccountNavigator';
 
 const Tab = createBottomTabNavigator();
 
@@ -32,13 +32,13 @@ export default HomeNavigator = () => {
         options={getOptions('calendar')}
       />
       <Tab.Screen
-        name={routes.Teams}
-        component={TeamNavigator}
-        options={getOptions('microsoft-teams')}
+        name={routes.Users}
+        component={UserNavigator}
+        options={getOptions('nature-people')}
       />
       <Tab.Screen
         name={routes.Account}
-        component={AccountScreen}
+        component={AccountNavigator}
         options={getOptions('account')}
       />
     </Tab.Navigator>

@@ -1,10 +1,10 @@
-import React from 'react'
-import { StyleSheet, View, FlatList } from 'react-native'
-import ListItem from '../components/ListItem'
-import ListItemSeparator from '../components/ListItemSeparator'
-import colors from '../config/colors'
-import Icon from '../components/Icon'
-import { useAuth } from '../hooks/useAuth'
+import React from 'react';
+import { StyleSheet, View, FlatList } from 'react-native';
+import ListItem from '../components/ListItem';
+import ListItemSeparator from '../components/ListItemSeparator';
+import colors from '../config/colors';
+import Icon from '../components/Icon';
+import { useAuth } from '../hooks/useAuth';
 
 const menuItems = [
   {
@@ -22,10 +22,18 @@ const menuItems = [
     },
     targetScreen: 'Messages',
   },
-]
+  {
+    title: 'Settings',
+    icon: {
+      name: 'account-settings',
+      backgroundColor: colors.danger,
+    },
+    targetScreen: 'Settings',
+  },
+];
 
 export default function AccountScreen({ navigation }) {
-  const { user, logOut } = useAuth()
+  const { user, logOut } = useAuth();
 
   return (
     <>
@@ -50,7 +58,7 @@ export default function AccountScreen({ navigation }) {
                   backgroundColor={item.icon.backgroundColor}
                 />
               }
-              onPress={() => console.log("123")}
+              onPress={() => navigation.navigate(item.targetScreen)}
             />
           )}
         />
@@ -61,11 +69,11 @@ export default function AccountScreen({ navigation }) {
         IconComponent={<Icon name="logout" backgroundColor="#ffe66d" />}
       />
     </>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
   container: {
     marginVertical: 20,
   },
-})
+});
