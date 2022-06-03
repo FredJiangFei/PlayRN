@@ -158,6 +158,15 @@ export default function App() {
     // test, config, add icon and splash, deploy
     // ### app.config
     // slug, privacy
+
+        // Cache
+        
+        // Cache image
+        // react-native-expo-image-cache, expo-blur
+        // react-native-expo-image-cache： uri， preview(uri), tint
+        //  Cloudinary, 生成缩略图
+      
+      
   );
 }
 
