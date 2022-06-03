@@ -1,18 +1,22 @@
-import React from 'react';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import LoginScreen from '../screens/LoginScreen';
-import RegisterScreen from '../screens/RegisterScreen';
-import WelcomeScreen from '../screens/WelcomeScreen';
-import routes from './routes';
+import React from 'react'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import LoginScreen from '../screens/LoginScreen'
+import RegisterScreen from '../screens/RegisterScreen'
+import WelcomeScreen from '../screens/WelcomeScreen'
+import routes from './routes'
+import colors from '../config/colors'
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator()
 
 const AuthNavigator = () => {
   const getOptions = () => {
     return {
-      headerShown: false,
-    };
-  };
+      headerStyle: {
+        backgroundColor: colors.primary,
+      },
+      headerTitle: '',
+    }
+  }
 
   return (
     <Stack.Navigator initialRouteName={routes.Login}>
@@ -32,7 +36,7 @@ const AuthNavigator = () => {
         options={getOptions()}
       />
     </Stack.Navigator>
-  );
-};
+  )
+}
 
-export default AuthNavigator;
+export default AuthNavigator

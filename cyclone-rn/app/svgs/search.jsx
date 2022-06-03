@@ -7,6 +7,6 @@ const xml = `
     </svg>
 `;
 
-export default function Search() {
-  return <SvgXml xml={xml} />;
+export default function Search({ ...rest }) {
+  return <SvgXml xml={xml} { ...rest }/>;
 }

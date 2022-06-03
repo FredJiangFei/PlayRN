@@ -9,6 +9,6 @@ const xml = `
     </svg>
 `;
 
-export default function Message() {
-  return <SvgXml xml={xml} />;
+export default function Message({ ...rest }) {
+  return <SvgXml xml={xml} { ...rest }/>;
 }

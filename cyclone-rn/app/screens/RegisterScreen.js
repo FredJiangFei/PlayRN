@@ -9,7 +9,6 @@ import ElTextInput from '../components/ElTextInput';
 import ElButton from './../components/ElButton';
 import Google from './../svgs/google';
 import Facebook from './../svgs/facebook';
-import AuthScreen from '../components/AuthScreen';
 import GoBackDark from '../svgs/goBackDark';
 
 const validationSchema = Yup.object().shape({
@@ -57,7 +56,7 @@ export default function RegisterScreen({ navigation }) {
   };
 
   return (
-    <AuthScreen>
+    <>
       <GoBackDark />
       <ElTitle>Account Registration</ElTitle>
       <ElTextInput
@@ -113,7 +112,7 @@ export default function RegisterScreen({ navigation }) {
         onRemoveImage={handleRemove}
       />
        */}
-    </AuthScreen>
+    </>
   );
 }
 

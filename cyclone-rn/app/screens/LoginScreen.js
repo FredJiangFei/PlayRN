@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import authService from '../api/authService';
 import ElButton from '../components/ElButton';
 import ElTextInput from '../components/ElTextInput';
 import Link from '../components/Link';
@@ -13,7 +12,6 @@ import { Formik } from 'formik';
 import { useAuth } from './../hooks/useAuth';
 import Google from './../svgs/google';
 import Facebook from './../svgs/facebook';
-import AuthScreen from '../components/AuthScreen';
 
 const validationSchema = Yup.object().shape({
   email: Yup.string().required().email().label('Email'),
@@ -41,7 +39,7 @@ export default function LoginScreen({ navigation }) {
   };
 
   return (
-    <AuthScreen>
+    <>
       <Loader visible={loading} />
       <ElTitle>Account Login</ElTitle>
       <Formik
@@ -108,7 +106,7 @@ export default function LoginScreen({ navigation }) {
           </>
         )}
       </Formik>
-    </AuthScreen>
+    </>
   );
 }
 

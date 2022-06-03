@@ -8,6 +8,6 @@ const xml = `
     </svg>
 `;
 
-export default function Notification() {
-  return <SvgXml xml={xml} />;
+export default function Notification({ ...rest }) {
+  return <SvgXml xml={xml} { ...rest }/>;
 }
