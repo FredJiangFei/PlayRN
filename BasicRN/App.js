@@ -6,7 +6,6 @@ import RnText from './app/components/RnText';
 import RnImage from './app/components/RnImage';
 import { NavigationContainer } from '@react-navigation/native';
 import BottomTabNavigator from './app/navigation/BottomTabNavigator';
-import Card from './app/components/Card';
 import RnFlastList from './app/components/RnFlastList';
 import Header from './app/components/Header';
 import StartGame from './app/screens/StartGame';

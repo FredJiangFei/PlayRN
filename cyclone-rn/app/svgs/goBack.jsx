@@ -1,6 +1,4 @@
 import { SvgXml } from 'react-native-svg'
-import { useNavigation } from '@react-navigation/native'
-import ElIconButton from '../components/ElIconButton'
 
 const xml = `
 <svg width="23" height="16" viewBox="0 0 23 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -9,10 +7,5 @@ const xml = `
 `
 
 export default function GoBack({ ...rest }) {
-  const navigation = useNavigation()
-  return (
-    <ElIconButton onPress={() => navigation.goBack()} {...rest}>
-      <SvgXml xml={xml} />
-    </ElIconButton>
-  )
+  return <SvgXml xml={xml} {...rest} />
 }

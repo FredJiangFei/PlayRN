@@ -13,6 +13,7 @@ import Notification from '../svgs/notification'
 import Message from '../svgs/message'
 import Menu from '../svgs/menu'
 import GoBack from './../svgs/goBack'
+import defaultStyles from '../config/styles'
 
 const Tab = createBottomTabNavigator()
 
@@ -22,24 +23,27 @@ const HomeNavigator = () => {
       tabBarIcon: ({ color, size }) => (
         <MaterialCommunityIcons name={icon} color={color} size={size} />
       ),
-      headerTitle: '',
-      headerStyle: {
-        backgroundColor: colors.primary,
-      },
-      headerRight: () => (
-        <View style={styles.menuBar}>
-          <Search style={styles.item} />
-          <Notification style={styles.item} />
-          <Message style={styles.item} />
-          <Menu style={styles.item} />
-        </View>
-      ),
-      headerLeft: () => <GoBack style={styles.goback}/>,
     }
   }
 
   return (
-    <Tab.Navigator>
+    <Tab.Navigator
+      screenOptions={{
+        headerTitle: '',
+        headerStyle: {
+          backgroundColor: colors.primary,
+        },
+        headerRight: () => (
+          <View style={styles.menuBar}>
+            <Search style={defaultStyles.mr8} />
+            <Notification style={defaultStyles.mr8} />
+            <Message style={defaultStyles.mr8} />
+            <Menu style={defaultStyles.mr8} />
+          </View>
+        ),
+        headerLeft: () => <GoBack style={defaultStyles.ml8} />,
+      }}
+    >
       <Tab.Screen
         name={routes.Home}
         component={HomeScreen}
@@ -69,12 +73,6 @@ const styles = StyleSheet.create({
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-  },
-  item: {
-    marginRight: 8,
-  },
-  goback: {
-    marginLeft: 8,
   },
 })
 

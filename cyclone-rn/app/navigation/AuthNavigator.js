@@ -13,6 +13,7 @@ const AuthNavigator = () => {
     return {
       headerStyle: {
         backgroundColor: colors.primary,
+        height: 10
       },
       headerTitle: '',
     }
