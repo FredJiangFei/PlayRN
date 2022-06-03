@@ -6,13 +6,13 @@ import {
   Modal,
   Button,
   FlatList,
-  Text
+  Text,
 } from 'react-native'
 import Screen from './Screen'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 
 import colors from '../config/colors'
-import ElPickerItem from './ElPickerItem';
+import ElPickerItem from './ElPickerItem'
 
 export default function ElPicker({
   selectedItem,

@@ -1,9 +1,18 @@
-import React from 'react'
-import { FlatList } from 'react-native'
+import React, { useState } from 'react'
+import { Button, FlatList, Modal } from 'react-native'
 import Card from '../components/Card'
 import { MaterialCommunityIcons } from '@expo/vector-icons'
 import colors from '../config/colors'
 import defaultStyles from '../config/styles'
+import ElTextInput from '../components/ElTextInput'
+import CyFlex from '../components/CyFlex'
+import Screen from './../components/Screen'
+import { Formik } from 'formik'
+import Loader from '../components/Loader'
+
+const initValue = {
+  text: '',
+}
 
 export default function HomeScreen({ navigation }) {
   React.useLayoutEffect(() => {
@@ -14,40 +23,94 @@ export default function HomeScreen({ navigation }) {
           color={colors.light}
           size={32}
           style={defaultStyles.ml8}
+          onPress={() => setModalVisible(true)}
         />
       ),
     })
   }, [navigation])
 
-  const posts = [
+  const initPosts = [
     {
-      id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
+      id: 1,
       desc: 'The mind is everything. What you think you become.',
       imageUrl: 'https://picsum.photos/id/1002/200/300',
     },
     {
-      id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
+      id: 2,
       desc: 'Eighty percent of success is showing up.',
       imageUrl: 'https://picsum.photos/id/1003/200/300',
     },
     {
-      id: '58694a0f-3da1-471f-bd96-145571e29d72',
+      id: 3,
       desc: 'Go confidently in the direction of your dreams. Live the life you have imagined.',
       imageUrl: 'https://picsum.photos/id/1004/200/300',
     },
   ]
 
+  const [posts, setPosts] = useState(initPosts)
+  const [loading, setLoading] = useState(false)
+  const [modalVisible, setModalVisible] = useState(false)
+
+  const submit = async (values) => {
+    setLoading(true)
+    setTimeout(() => {
+      setPosts((ps) => [
+        {
+          id: ps.length + 1,
+          desc: values.text,
+          imageUrl: 'https://picsum.photos/id/1004/200/300',
+        },
+        ...ps,
+      ])
+      setLoading(false)
+      setModalVisible(false)
+    }, 1000)
+  }
   return (
-    <FlatList
-      data={posts}
-      keyExtractor={(p) => p.id}
-      renderItem={({ item }) => (
-        <Card
-          desc={item.desc}
-          imageUrl={item.imageUrl}
-          onPress={(desc) => alert(desc)}
-        />
-      )}
-    />
+    <>
+      <FlatList
+        data={posts}
+        keyExtractor={(p) => p.id}
+        renderItem={({ item }) => (
+          <Card
+            desc={item.desc}
+            imageUrl={item.imageUrl}
+            onPress={(desc) => alert(desc)}
+          />
+        )}
+      />
+
+      <Modal visible={modalVisible} animationType="slide">
+        <Loader visible={loading} />
+        <Screen>
+          <Formik
+            initialValues={initValue}
+            onSubmit={(values) => submit(values)}
+          >
+            {({ handleChange, handleSubmit, setFieldTouched }) => (
+              <>
+                <CyFlex>
+                  <Button title="Save" onPress={handleSubmit} />
+                  <Button
+                    title="Cancel"
+                    onPress={() => setModalVisible(false)}
+                  />
+                </CyFlex>
+
+                <ElTextInput
+                  autoCapitalize="none"
+                  autoCorrect={false}
+                  name="text"
+                  icon="text"
+                  placeholder="Write something..."
+                  onBlur={() => setFieldTouched('text')}
+                  onChangeText={handleChange('text')}
+                />
+              </>
+            )}
+          </Formik>
+        </Screen>
+      </Modal>
+    </>
   )
 }
