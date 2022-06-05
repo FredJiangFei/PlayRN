@@ -9,6 +9,7 @@ import CyFlex from '../components/CyFlex'
 import Screen from './../components/Screen'
 import { Formik } from 'formik'
 import Loader from '../components/Loader'
+import ImageInputList from '../components/ImageInputList'
 
 const initValue = {
   text: '',
@@ -66,6 +67,17 @@ export default function HomeScreen({ navigation }) {
       setModalVisible(false)
     }, 1000)
   }
+
+  const [images, setImages] = useState([])
+
+  const handleAdd = (uri) => {
+    setImages([...images, uri])
+  }
+
+  const handleRemove = (uri) => {
+    setImages(images.filter((imageUri) => imageUri !== uri))
+  }
+
   return (
     <>
       <FlatList
@@ -105,6 +117,12 @@ export default function HomeScreen({ navigation }) {
                   placeholder="Write something..."
                   onBlur={() => setFieldTouched('text')}
                   onChangeText={handleChange('text')}
+                />
+
+                <ImageInputList
+                  imageUris={images}
+                  onAddImage={handleAdd}
+                  onRemoveImage={handleRemove}
                 />
               </>
             )}

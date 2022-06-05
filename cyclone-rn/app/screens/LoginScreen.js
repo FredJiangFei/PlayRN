@@ -90,7 +90,7 @@ export default function LoginScreen({ navigation }) {
               <Link to={routes.Register}>Contact us</Link>
             </Text>
 
-            <Text style={styles.or}>or</Text>
+            {/* <Text style={styles.or}>or</Text>
             <Text style={styles.with}>
               Sign In with your Google or Facebook{' '}
             </Text>
@@ -98,7 +98,7 @@ export default function LoginScreen({ navigation }) {
             <View style={styles.google}>
               <Google />
               <Facebook />
-            </View>
+            </View> */}
             <ElButton title="Sign in" onPress={handleSubmit} />
             <Text style={{ textAlign: 'center', marginBottom: 32 }}>
               <Link to={routes.Register}>Sign up for free</Link>

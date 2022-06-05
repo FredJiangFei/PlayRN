@@ -45,15 +45,6 @@ const sports = [
 
 export default function RegisterScreen({ navigation }) {
   const [sport, setSport] = useState();
-  const [images, setImages] = useState([]);
-
-  const handleAdd = (uri) => {
-    setImages([...images, uri]);
-  };
-
-  const handleRemove = (uri) => {
-    setImages(images.filter((imageUri) => imageUri !== uri));
-  };
 
   return (
     <>
@@ -105,13 +96,6 @@ export default function RegisterScreen({ navigation }) {
         <Google />
         <Facebook />
       </View>
-
-      {/* <ImageInputList
-        imageUris={images}
-        onAddImage={handleAdd}
-        onRemoveImage={handleRemove}
-      />
-       */}
     </>
   );
 }
