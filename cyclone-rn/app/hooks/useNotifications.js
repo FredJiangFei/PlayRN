@@ -91,7 +91,6 @@ export const useNotifications = ({navigation}) => {
       body: JSON.stringify(message),
     })
   }
-  
 
   const sendLocalNotification = () => {
     Notifications.scheduleNotificationAsync({

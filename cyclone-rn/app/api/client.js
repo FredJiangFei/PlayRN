@@ -7,6 +7,12 @@ const apiClient = create({
     // baseURL: 'http://localhost:3000/'
 });
 
+apiClient.addAsyncRequestTransform(async request => {
+    const authToken = await authStorage.getToken();
+    if (!authToken) return;
+    request.headers['x-auth-token'] = authToken;
+});
+
 const get = apiClient.get;
 apiClient.get = async (url, params, axiosConfig) => {
     const res = await get(url, params, axiosConfig);
