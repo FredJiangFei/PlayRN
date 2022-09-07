@@ -67,4 +67,49 @@ npx expo start --offline
 ### Upgrading Expo SDK
 	https://docs.expo.dev/workflow/upgrading-expo-sdk-walkthrough/
 
-### Developing for Web
+### Developing for Web (need test)
+
+### Snack
+	Adding a library
+	Saving and sharing code
+	Embed it on your website
+
+### Prebuild
+	generates the native code
+	Usage
+		expo prebuild
+		expo prebuild --clean
+	Usage with EAS Build
+	Usage with Expo CLI run commands
+
+# Distributing App
+
+### Submitting to the Apple App Store
+	https://docs.expo.dev/submit/ios/
+	A paid developer account is required
+	EAS CLI installed & Expo account
+	1. Build a standalone app
+	2. Start the submission
+		eas submit -p ios
+	Submitting your app using CI
+
+### Submitting to the Google Play Store
+	https://docs.expo.dev/submit/android/
+
+### App Store Best Practices
+	Version app
+		https://docs.expo.dev/build-reference/app-versions/
+		version/android.versionCode/ios.buildNumber
+		Remote version source
+			rely on EAS servers to store and manage the version of your app. / eas.json
+		Local version source
+	EAS Metadata			
+		provide all necessary information to the stores and get your app published
+	Permissions
+		访问user的设备敏感信息，需要申请权限，否则app会被拒绝发布
+		iOS
+			expo.ios.infoPlist
+			https://developer.apple.com/design/human-interface-guidelines/patterns/accessing-private-data/
+			https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW1
+		Android
+	App Icon
