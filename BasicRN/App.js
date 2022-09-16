@@ -6,7 +6,6 @@ import RnText from './app/components/RnText'
 import RnImage from './app/components/RnImage'
 import { NavigationContainer } from '@react-navigation/native'
 import BottomTabNavigator from './app/navigation/BottomTabNavigator'
-import RnFlastList from './app/components/RnFlastList'
 import Header from './app/components/Header'
 import StartGame from './app/screens/StartGame'
 import React, { useState } from 'react'
@@ -39,12 +38,12 @@ export default function App() {
     //     <RnImage source={logo} />
     //     <RnImage source={require('./assets/mario.png')} />
     //     <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
-    // <RnImagePicker />
+    <RnImagePicker />
     //     <RnFlastList />
     //  </View>
-    <NavigationContainer>
-      <BottomTabNavigator />
-    </NavigationContainer>
+    // <NavigationContainer>
+    //   <BottomTabNavigator />
+    // </NavigationContainer>
 
     // #### Game guess number
     //   TextInput

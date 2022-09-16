@@ -11,6 +11,7 @@ import * as Sharing from 'expo-sharing';
 
 export default function RnImagePicker() {
   const [selectedImage, setSelectedImage] = React.useState({});
+  
   const openImagePickerAsync = async () => {
     let permissionResult =
       await ImagePicker.requestMediaLibraryPermissionsAsync();

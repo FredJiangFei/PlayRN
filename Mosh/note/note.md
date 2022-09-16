@@ -90,6 +90,21 @@
     long text
         Text > numberOfLines
 
-### Device(P1)
+### Device
+
+### ImagePicker
+
+    expo install expo-image-picker
+        ImagePicker.requestCameraPermissionsAsync()
+
+### Permission
+
+        expo-permissions
+
+### Location
+
+p41
+
+### Upload Progress
 
 ### Navigation
