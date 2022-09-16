@@ -110,7 +110,8 @@
 ### OfflineApp
 
     Network
-    Cache
+    Cache data
+    Cache image
     Notication
 
 ### Publish
