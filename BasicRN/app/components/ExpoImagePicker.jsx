@@ -6,11 +6,12 @@ import {
   TouchableOpacity,
   Button,
 } from 'react-native';
-import ImagePicker from 'react-native-image-picker';
+import * as ImagePicker from 'expo-image-picker';
+import * as Sharing from 'expo-sharing';
 
-export default function RnImagePicker() {
+export default function ExpoImagePicker() {
   const [selectedImage, setSelectedImage] = React.useState({});
-
+  
   const openImagePickerAsync = async () => {
     let permissionResult =
       await ImagePicker.requestMediaLibraryPermissionsAsync();
@@ -29,7 +30,8 @@ export default function RnImagePicker() {
   };
 
   const openTakeImageAsync = async () => {
-    let permissionResult = await Permissions;
+    let permissionResult =
+      await Permissions
 
     if (permissionResult.granted === false) {
       alert('Permission to access camera roll is required!');

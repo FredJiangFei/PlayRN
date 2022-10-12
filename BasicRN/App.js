@@ -1,16 +1,16 @@
-import { StatusBar } from 'expo-status-bar'
-import { StyleSheet, View, FlatList } from 'react-native'
-import logo from './assets/mario.png'
-import RnImagePicker from './app/components/RnImagePicker'
-import RnText from './app/components/RnText'
-import RnImage from './app/components/RnImage'
-import { NavigationContainer } from '@react-navigation/native'
-import BottomTabNavigator from './app/navigation/BottomTabNavigator'
-import Header from './app/components/Header'
-import StartGame from './app/screens/StartGame'
-import React, { useState } from 'react'
-import { Dimensions } from 'react-native-web'
-import 'react-native-gesture-handler'
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, View, FlatList } from 'react-native';
+import logo from './assets/mario.png';
+import ExpoImagePicker from './app/components/ExpoImagePicker';
+import RnText from './app/components/RnText';
+import RnImage from './app/components/RnImage';
+import { NavigationContainer } from '@react-navigation/native';
+import BottomTabNavigator from './app/navigation/BottomTabNavigator';
+import Header from './app/components/Header';
+import StartGame from './app/screens/StartGame';
+import React, { useState } from 'react';
+import { Dimensions } from 'react-native-web';
+import 'react-native-gesture-handler';
 
 // const fetchFonts = () => {
 //   Font.loadAsync({
@@ -38,7 +38,7 @@ export default function App() {
     //     <RnImage source={logo} />
     //     <RnImage source={require('./assets/mario.png')} />
     //     <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
-    <RnImagePicker />
+    <ExpoImagePicker />
     //     <RnFlastList />
     //  </View>
     // <NavigationContainer>
@@ -162,7 +162,7 @@ export default function App() {
     // react-native-expo-image-cache, expo-blur
     // react-native-expo-image-cache： uri， preview(uri), tint
     //  Cloudinary, 生成缩略图
-  )
+  );
 }
 
 const styles = StyleSheet.create({
@@ -181,4 +181,4 @@ const styles = StyleSheet.create({
     overflow: 'hidden',
     marginVertical: 30,
   },
-})
+});
