@@ -38,12 +38,12 @@ export default function App() {
     //     <RnImage source={logo} />
     //     <RnImage source={require('./assets/mario.png')} />
     //     <RnImage source={{ uri: 'https://picsum.photos/id/237/200/300' }} />
-    <ExpoImagePicker />
+    // <ExpoImagePicker />
     //     <RnFlastList />
     //  </View>
-    // <NavigationContainer>
-    //   <BottomTabNavigator />
-    // </NavigationContainer>
+    <NavigationContainer>
+      <BottomTabNavigator />
+    </NavigationContainer>
 
     // #### Game guess number
     //   TextInput
@@ -108,7 +108,6 @@ export default function App() {
 
     // tab navigator
     // createBottomTabNavigator
-    // tabBarOptions: activeTintColor
 
     // react-navigation-material-bottom-tabs / createMaterialBottomTabNavigator
     // shifting

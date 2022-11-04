@@ -6,7 +6,7 @@ const Stack = createStackNavigator();
 const TodoStackNavigator = () => {
   return (
     <Stack.Navigator>
-      <Stack.Screen name="Todo" component={Todo} />
+      <Stack.Screen name="Todos" component={Todo} />
       <Stack.Screen name="TodoDetails" component={TodoDetails} />
     </Stack.Navigator>
   );

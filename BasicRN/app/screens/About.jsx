@@ -1,14 +1,13 @@
 import React from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 const About = ({ navigation }) => {
   React.useLayoutEffect(() => {
     navigation.setOptions({
       title: 'Second Page', //Set Header Title
       headerTitle: (props) => (
-        <Text
-          {...props}
-          style={{color: 'white', fontWeight: 'bold'}}>
+        <Text {...props} style={{ color: 'white', fontWeight: 'bold' }}>
           Custom Title
         </Text>
       ),
@@ -19,14 +18,6 @@ const About = ({ navigation }) => {
       headerTitleStyle: {
         fontWeight: 'bold', //Set Header text style
       },
-      // headerLeft: () => (
-      //   <TouchableOpacity
-      //     onPress={() => alert('Left Menu Clicked')}
-      //     style={{ marginLeft: 10 }}
-      //   >
-      //     <Text style={{ color: 'white' }}>Left Menu</Text>
-      //   </TouchableOpacity>
-      // ),
       headerRight: () => (
         <TouchableOpacity
           onPress={() => alert('Right Menu Clicked')}
@@ -41,6 +32,19 @@ const About = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <Text>This is the About screen!</Text>
+      <Pressable
+        onPress={() =>
+          navigation.navigate('Todo', {
+            screen: 'TodoDetails',
+            params: {
+              todoId: 1,
+            },
+            initial: false,
+          })
+        }
+      >
+        <Text>Go to do</Text>
+      </Pressable>
     </View>
   );
 };
