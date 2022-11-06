@@ -12,6 +12,7 @@ const Thumb = ({ min, max, value, onChange, containerWidth }) => {
     if (!max) return 0;
     return (containerWidth / max) * v;
   };
+
   const calValue = (pos) => {
     const newValue = Math.floor((maxValue.current / 256) * pos);
 
@@ -106,7 +107,7 @@ export default function ElSlider({ min, max, value, onChange }) {
   return (
     <Box p={2} mt={2}>
       <Flex onLayout={onLayout} h={8} justify="center">
-        <Flex h={1} bgColor="gray"></Flex>
+        <Flex h={1} bgColor="red.200"></Flex>
         <Thumb
           min={min}
           max={max}
