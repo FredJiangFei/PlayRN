@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Button, Text, StyleSheet } from 'react-native';
 import styled from 'styled-components/native';
+import ElSlider from '../components/ElSlider';
 
 const Home = ({ navigation }) => {
+  const [rangeValue, setRangeValue] = useState([0, 3]);
+
   return (
     <View style={styles.container}>
-      <Container>
-        <Title color="palevioletred">This is the Home screen!</Title>
-      </Container>
+      <ElSlider min={0} max={20} value={rangeValue} onChange={setRangeValue} />
       <Button
         title="Go to About Screen"
         onPress={() => navigation.navigate('About')}

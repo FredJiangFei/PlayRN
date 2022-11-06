@@ -11,6 +11,7 @@ import StartGame from './app/screens/StartGame';
 import React, { useState } from 'react';
 import { Dimensions } from 'react-native-web';
 import 'react-native-gesture-handler';
+import { NativeBaseProvider } from 'native-base';
 
 // const fetchFonts = () => {
 //   Font.loadAsync({
@@ -32,6 +33,12 @@ export default function App() {
   //   );
 
   return (
+    <NativeBaseProvider>
+      <NavigationContainer>
+        <BottomTabNavigator />
+      </NavigationContainer>
+    </NativeBaseProvider>
+
     // <StartGame />
     //  <View style={styles.container}>
     //     <RnText>Hello, RN</RnText>
@@ -41,9 +48,6 @@ export default function App() {
     // <ExpoImagePicker />
     //     <RnFlastList />
     //  </View>
-    <NavigationContainer>
-      <BottomTabNavigator />
-    </NavigationContainer>
 
     // #### Game guess number
     //   TextInput
