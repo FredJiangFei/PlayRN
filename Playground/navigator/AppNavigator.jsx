@@ -1,17 +1,16 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
-import LeagueNavigator from './LeagueNavigator';
-import TeamNavigator from './TeamNavigator';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import DrawerNavigator from './DrawerNavigator';
+import TabNavigator from './TabNavigator';
 
-const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
 
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <Tab.Navigator>
-        <Tab.Screen name="My League" component={LeagueNavigator} />
-        <Tab.Screen name="My Team" component={TeamNavigator} />
-      </Tab.Navigator>
+      <Stack.Navigator>
+        <Stack.Screen name="DrawerNavigator" component={DrawerNavigator} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 }
